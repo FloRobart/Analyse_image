@@ -1,23 +1,32 @@
 package recuperation_page_web;
 
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.*;
+import java.net.*;
 
 
 public class TestRecupIntranet
 {
-    public static void main(String[] args)
+    public static String getHTML(String urlToRead) throws Exception
     {
-        try
+        StringBuilder result = new StringBuilder();
+        URL url = new URL(urlToRead);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream())))
         {
-            String urlString = "https://zeperfs.com/fiche8589-toyota-yaris-iv-gr.htm";
-            URL url = new URL(urlString);
-            URLConnection conn = url.openConnection();
-            InputStream is = conn.getInputStream();
-            
-            System.out.println(is.read());
+            for (String line; (line = reader.readLine()) != null;)
+                result.append(line);
         }
-        catch (Exception e) { e.printStackTrace(); System.out.println("\n\n problème"); }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) throws Exception
+    {
+        if (args.length != 0)
+            System.out.println(getHTML(args[0]));
+        else
+            System.out.println("argument oublier");        
     }
 }

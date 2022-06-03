@@ -2,9 +2,10 @@ package recuperation_page_web;
 
 import java.io.*;
 import java.net.*;
+import iut.algo.Clavier;
 
 
-public class TestRecupIntranet
+public class TestRecupPage
 {
     public static String getHTML(String urlToRead) throws Exception
     {
@@ -27,6 +28,9 @@ public class TestRecupIntranet
         if (args.length != 0)
             System.out.println(getHTML(args[0]));
         else
-            System.out.println("argument oublier");        
+        {
+            System.out.println("saisissez une URL : ");
+            args[0] = Clavier.lireString();
+        }
     }
 }

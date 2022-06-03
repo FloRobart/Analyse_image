@@ -1,3 +1,5 @@
+package analyse_images;
+
 import java.awt.image.BufferedImage;
 
 

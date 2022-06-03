@@ -1,27 +1,22 @@
-import java.awt.Color;
-import java.awt.image.BufferedImage;
+package analyse_images;
+
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.metadata.IIOMetadataController;
 import javax.imageio.stream.ImageInputStream;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 
-public class TestMetaData
+public class TestMetaDataFichier
 {
     public static void main(String[] args)
     {
         File file = new File("./images/2020-09-08__13.09.50.jpeg");
-        TestMetaData.Image(file);
+        TestMetaDataFichier.Image(file);
     }
 
 

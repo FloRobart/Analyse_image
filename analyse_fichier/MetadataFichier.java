@@ -1,8 +1,11 @@
-import java.nio.file.attribute.*;
-import java.nio.file.*;
-import java.io.IOException;
+package analyse_fichier;
 
-public class Main
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class MetadataFichier
 {
     public static void main(String[] args)
     {

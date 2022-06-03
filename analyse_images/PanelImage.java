@@ -1,3 +1,5 @@
+package analyse_images;
+
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

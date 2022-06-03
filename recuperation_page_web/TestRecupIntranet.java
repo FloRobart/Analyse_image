@@ -11,11 +11,12 @@ public class TestRecupIntranet
     {
         try
         {
-            String urlString = "<url>";
+            String urlString = "https://zeperfs.com/fiche8589-toyota-yaris-iv-gr.htm";
             URL url = new URL(urlString);
             URLConnection conn = url.openConnection();
             InputStream is = conn.getInputStream();
-            // Do what you want with that stream
+            
+            System.out.println(is.read());
         }
         catch (Exception e) { e.printStackTrace(); System.out.println("\n\n problème"); }
     }
